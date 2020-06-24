@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :views, dependent: :destroy
   has_many :user_applies
 
-  delegate :name, to: :company, prefix: true
-
+  delegate :name, :logo, to: :company, prefix: true
+  
   has_secure_password
 end

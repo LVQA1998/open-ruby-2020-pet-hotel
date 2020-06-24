@@ -1,0 +1,5 @@
+<div class="time-btn"><%= t "select_cv" %>
+  <%= select_tag "profile_id", options_from_collection_for_select(current_user.profiles.public_cv, "id", "created_at") %>
+</div>
+<%= hidden_field_tag :post_id, @post.id %>
+<%= button_tag t("admin.apply.apply_job"), class: "btn btn-primary", id: "submit_job", data: {url:user_applies_path} %>

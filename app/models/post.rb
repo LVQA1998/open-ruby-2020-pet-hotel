@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :user_applies, dependent: :destroy
 
   delegate :title, to: :category, prefix: true
+  delegate :company_logo, :company_name, to: :user
 
   accepts_nested_attributes_for :skills, allow_destroy: true
 

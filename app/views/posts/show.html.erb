@@ -1,0 +1,35 @@
+<div class="inner-content listing detail">
+  <div class="container">     
+    <div class="inner-wrap">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="listWrpService jobdetail">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="listImg"><%= image_tag @post.company_logo %></div>
+              </div>
+              <div class="col-md-9 col-sm-9 col-xs-9">
+                <h3><%= @post.title %></h3>
+                <p><%= @post.company_name %></p>
+                <ul class="featureInfo">
+                  <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= @post.address %></li>
+                  <li><i class="fa fa-calendar" aria-hidden="true"></i><%= @post.apply_time %></li>
+                </ul>
+                <div class="time-btn"><%= @post.target_type %></div>
+                <%= render "apply_form" if logged_in? %>
+              </div>
+            </div>
+            <h2><%= t "admin.post.description" %></h2>
+            <%= @post.description %>
+            <% if @post.skills.any? %>
+              <h2><%= t "admin.post.skill" %></h2>
+              <ul class="featureLinks">
+                <%= render @post.skills %>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>

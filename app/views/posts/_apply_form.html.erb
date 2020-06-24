@@ -1,0 +1,7 @@
+<div id="apply_job">
+  <% if user_apply? @post %>
+    <%= render "cancel" %>
+  <% else %>
+    <%= render "apply" %>
+  <% end %>
+</div>

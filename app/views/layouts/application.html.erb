@@ -9,6 +9,8 @@
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
     <%= stylesheet_link_tag "custom" %>
     <%= stylesheet_link_tag "style" %>
+    <%= javascript_include_tag "i18n" %>
+    <%= javascript_include_tag "translations", skip_pipeline: true %>
   </head>
 
   <body>
@@ -16,5 +18,7 @@
     <%= render "shared/notice_messages" %>
     <%= yield %>
     <%= render "layouts/footer" %>
+
+     <%= javascript_pack_tag "user_apply" %>
   </body>
 </html>

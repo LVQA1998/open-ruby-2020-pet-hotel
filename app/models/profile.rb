@@ -11,6 +11,7 @@ class Profile < ApplicationRecord
   has_many :views, as: :viewable, dependent: :destroy
   has_many :experiences, dependent: :destroy
   has_many :qualifications, dependent: :destroy
+  has_many :user_apply, dependent: :destroy
 
   delegate :username, to: :user, prefix: true
 

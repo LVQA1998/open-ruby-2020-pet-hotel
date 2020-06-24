@@ -2,17 +2,16 @@
   <div class="listWrpService">
     <div class="row">
       <div class="col-md-3 col-sm-3 col-xs-3">
-        <div class="listImg"><%= image_tag Settings.image_link %></div>
+        <div class="listImg"><%= image_tag post.company_logo %></div>
       </div>
       <div class="col-md-9 col-sm-9 col-xs-9">
-        <h3><%= link_to post.title, "#" %></h3>
-        <p><%= post.user.company_name %></p>
+        <h3><%= link_to post.title, post_path(post) %></h3>
+        <p><%= post.company_name %></p>
         <ul class="featureInfo">
           <li><i class="fa fa-map-marker" aria-hidden="true"></i><%= post.address %></li>
           <li><i class="fa fa-calendar" aria-hidden="true"></i><%= post.apply_time %></li>
         </ul>
         <div class="time-btn"><%= post.target_type %></div>
-        <div class="click-btn"><%= link_to t("apply"), "#" %></div>
       </div>
     </div>
   </div>
