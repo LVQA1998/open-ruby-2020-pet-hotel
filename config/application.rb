@@ -9,6 +9,7 @@ module Ruby2020FindJob
     config.load_defaults 6.0
     
     config.middleware.use I18n::JS::Middleware
+    config.middleware.use PDFKit::Middleware
     config.i18n.default_locale = :vi
     config.active_job.queue_adapter = :sidekiq
     config.session_store :active_record_store,

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get "/job_applieds", to: "job_applieds#index"
         resources :profiles, except: :index do
           patch "public", to: "status_profiles#update"
+          resource :downloads, only: :show
         end
       end
     end
