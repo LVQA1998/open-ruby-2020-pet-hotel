@@ -3,6 +3,9 @@ module FindJob
     class Users < Grape::API
       version "v1"
       format :json
+      
+      include Grape::Jwt::Authentication
+      auth :jwt
 
       resources :users do
         desc "Create a user"
